@@ -369,7 +369,7 @@ $('.btn-search').click(function () {
     $(".products-list .product-items").slice(0, 10).show();
     $("#loadMore").on('click', function (e) {
         e.preventDefault();
-        $(".products-list .product-items:hidden").slice(0, 10).slideDown();
+        $(".products-list .product-items:hidden").slice(0, 15).slideDown();
         if ($(".products-list .product-items:hidden").length == 0) {
             $("#load").fadeOut('slow');
         }
@@ -387,7 +387,7 @@ $('.btn-search').click(function () {
  <div class="product-info">
  <div class="product-name"><a href="" class="product_title">Smartphone MTK6737 Quad Core.</a></div>
  <span class="star-rating">
-    <span class="review"> Rating</span>
+    <span class="review">Rating</span>
  </span>
  <div class="product-infomation"></div>
  </div>
