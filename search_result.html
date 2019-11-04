@@ -14,6 +14,26 @@
     <link rel="stylesheet" type="text/css" href="html/krystal/html/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,600i,700,700i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700" rel="stylesheet">
+    <style>
+        #addMore {
+            padding: 10px;
+            text-align: center;
+            background-color: #33739E;
+            color: #fff;
+            border-width: 0 1px 1px 0;
+            border-style: solid;
+            border-color: #fff;
+            box-shadow: 0 1px 1px #ccc;
+            transition: all 600ms ease-in-out;
+            -webkit-transition: all 600ms ease-in-out;
+            -moz-transition: all 600ms ease-in-out;
+            -o-transition: all 600ms ease-in-out;
+        }
+        #addMore:hover {
+            background-color: #fff;
+            color: #33739E;
+        }
+    </style>
 </head>
 <body class="page-product list-view">
 <div class="wrapper">
@@ -281,7 +301,8 @@
 
                         </div>
 <!--Load more-->
-                        <a href="#" id="loadMore">Load More</a>
+                        <a href="#" id="loadMore" style="display: none">Load More</a>
+                        <a href="#" id="addMore" data-start = "0" data-end= "50"->Add More</a>
 
                         <!--Load more-->
 
@@ -356,7 +377,10 @@
 <script type="text/javascript" src="html/krystal/html/js/Modernizr.js"></script>
 <script type="text/javascript" src="html/krystal/html/js/jquery.plugin.js"></script>
 <script type="text/javascript" src="html/krystal/html/js/jquery.countdown.js"></script>
-   <!-- <script type="text/javascript" src="lod.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.5.0/papaparse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+<script type="text/javascript" src="lod.js"></script>
+
     
 <script>
 $('.btn-search').click(function () {
@@ -365,7 +389,7 @@ $('.btn-search').click(function () {
        window.location.href = "search_result?search="+search;
    }
 });
-    $( window ).on( "load", function() {
+/*    $( window ).on( "load", function() {
     $(".products-list .product-items").slice(0, 10).show();
     $("#loadMore").on('click', function (e) {
         e.preventDefault();
@@ -377,7 +401,7 @@ $('.btn-search').click(function () {
             scrollTop: $(this).offset().top
         }, 1500);
     });
-});
+});*/
  var product = (function () {/*
  <div class="product-image">
     <a href=""><img class="product_image" src="html/krystal/html/images/product/p2.jpg" alt="p2"></a>
@@ -394,34 +418,35 @@ $('.btn-search').click(function () {
  */}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
     const urlParams = new URLSearchParams(window.location.search);
     const search = urlParams.get('search');
+
+    $('#addMore').click(function () {
+        addElements(csvData);
+
+        $(".products-list .product-items").slice(0, 50).show();
+       // e.preventDefault();
+        $(".products-list .product-items:hidden").slice(0, 100).slideDown();
+        if ($(".products-list .product-items:hidden").length == 0) {
+            $("#load").fadeOut('slow');
+        }
+        $('html,body').animate({
+            scrollTop: $(this).offset().top
+        }, 1500);
+    })
+
     $(document).ready(function() {
         $.ajax({
             type: "GET",
             url: "csv/carss.csv",
             dataType: "text",
             success: function(data) {
-                let collection = processData(data);
-                for(let i=0; i<collection.length; i++){
-                    if(collection[i][0].toLowerCase().search(search.toLowerCase()) != -1){
-                        let product_item = document.createElement('div');
-                        product_item.className='product-items';
-                        product_item.innerHTML = product;
-                        $(product_item).find('.product_image')[0].src = collection[i][2];
-                        $(product_item).find('.product_title').text(collection[i][0]);
-                        $(product_item).find('.product-infomation').text(collection[i][3]);
-                        for(let j=0; j<parseInt(collection[i][1]); j++){
-                            /**ratinn=$(this).text(collection[i][1]);
-                            console.log(ratinn);**/
-                            $(product_item).find('.star-rating').prepend('<i class="fa fa-star" aria-hidden="true"></i>');
-                        }
-                        $(product_item).find('.review').prepend('<span class="rate-num">'+collection[i][1]+'/5</span>');
-                        $('.products-list').append(product_item);
-                    }
-                }
+                csvData = data;
+                addElementsFirst(csvData);
             }
         });
     });
-    function processData(allText) {
+
+
+    function processDataFirst(allText) {
         var allTextLines = allText.split(/\r\n|\n/);
         var headers = allTextLines[0].split(',');
         var lines = [];
@@ -436,10 +461,126 @@ $('.btn-search').click(function () {
                 lines.push(tarr);
             }
         }
-        console.log(lines);
-        return lines;
+        console.log(lines.slice(0,50));
+
+        return lines.slice(0,50);
     }
-    
+
+    function addElementsFirst(data) {
+        let collection = processDataFirst(data);
+
+        /* var data;
+         var csvData;
+         Papa.parse('csv/carss.csv', {
+             header: true,
+             download: true,
+             dynamicTyping: true,
+             complete: function(results) {
+                 console.log(results);
+                 data = results.data;
+                 csvData = results.data;
+
+                 var result = findEmailByName('citroen vtr',csvData);
+             }
+         });*/
+
+        var c = document.createDocumentFragment();
+
+        for(let i=0; i<collection.length; i++){
+            if(collection[i][0].toLowerCase().search(search.toLowerCase()) != -1){
+                let product_item = document.createElement('div');
+                product_item.className='product-items';
+                product_item.innerHTML = product;
+                product_item.querySelector('.product_image').src = collection[i][2];
+                product_item.querySelector('.product_title').textContent = collection[i][0];
+                product_item.querySelector('.product-infomation').textContent = collection[i][3];
+
+                /*$(product_item).find('.product_image')[0].src = collection[i][2];
+                $(product_item).find('.product_title').text(collection[i][0]);
+                $(product_item).find('.product-infomation').text(collection[i][3]);*/
+                for(let j=0; j<parseInt(collection[i][1]); j++){
+                    /**ratinn=$(this).text(collection[i][1]);
+                     console.log(ratinn);**/
+                    $(product_item).find('.star-rating').prepend('<i class="fa fa-star" aria-hidden="true"></i>');
+                }
+                $(product_item).find('.review').prepend('<span class="rate-num">'+collection[i][1]+'/5</span>');
+                c.appendChild(product_item);
+                //$('.products-list').append(product_item);
+            }
+        }
+        $('.products-list').append(c);
+    }
+
+    function addElements(data) {
+    let collection = processData(data);
+
+    /* var data;
+     var csvData;
+     Papa.parse('csv/carss.csv', {
+         header: true,
+         download: true,
+         dynamicTyping: true,
+         complete: function(results) {
+             console.log(results);
+             data = results.data;
+             csvData = results.data;
+
+             var result = findEmailByName('citroen vtr',csvData);
+         }
+     });*/
+
+    var c = document.createDocumentFragment();
+
+    for(let i=0; i<collection.length; i++){
+        if(collection[i][0].toLowerCase().search(search.toLowerCase()) != -1){
+            let product_item = document.createElement('div');
+            product_item.className='product-items';
+            product_item.innerHTML = product;
+            product_item.querySelector('.product_image').src = collection[i][2];
+            product_item.querySelector('.product_title').textContent = collection[i][0];
+            product_item.querySelector('.product-infomation').textContent = collection[i][3];
+
+            /*$(product_item).find('.product_image')[0].src = collection[i][2];
+            $(product_item).find('.product_title').text(collection[i][0]);
+            $(product_item).find('.product-infomation').text(collection[i][3]);*/
+            for(let j=0; j<parseInt(collection[i][1]); j++){
+                /**ratinn=$(this).text(collection[i][1]);
+                 console.log(ratinn);**/
+                $(product_item).find('.star-rating').prepend('<i class="fa fa-star" aria-hidden="true"></i>');
+            }
+            $(product_item).find('.review').prepend('<span class="rate-num">'+collection[i][1]+'/5</span>');
+            c.appendChild(product_item);
+            //$('.products-list').append(product_item);
+        }
+    }
+    $('.products-list').append(c);
+}
+
+    function processData(allText) {
+    var currChunkStart = +document.getElementById('addMore').getAttribute('data-start');
+    var currChunkEnd = +document.getElementById('addMore').getAttribute('data-end');
+    console.log(currChunkStart,currChunkEnd);
+    document.getElementById('addMore').setAttribute('data-start',currChunkEnd);
+    document.getElementById('addMore').setAttribute('data-end',currChunkEnd+50);
+
+    var allTextLines = allText.split(/\r\n|\n/);
+    var headers = allTextLines[0].split(',');
+    var lines = [];
+    for (var i=0; i<allTextLines.length; i++) {
+        var data = allTextLines[i].split(',');
+        if (data.length == headers.length) {
+
+            var tarr = [];
+            for (var j=0; j<headers.length; j++) {
+                tarr.push(data[j]);
+            }
+            lines.push(tarr);
+        }
+    }
+    console.log(lines.slice(currChunkStart,currChunkEnd));
+
+    return lines.slice(currChunkStart,currChunkEnd);
+}
     </script>
 </body>
 </html>
