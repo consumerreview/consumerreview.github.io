@@ -302,7 +302,7 @@
                         </div>
 <!--Load more-->
                         <a href="#" id="loadMore" style="display: none">Load More</a>
-                        <a href="#" id="addMore" data-start = "0" data-end= "50"->Add More</a>
+                        <a href="#" id="addMore" data-start = "0" data-end= "50" data-count="0"->Add More</a>
 
                         <!--Load more-->
 
@@ -377,8 +377,7 @@
 <script type="text/javascript" src="html/krystal/html/js/Modernizr.js"></script>
 <script type="text/javascript" src="html/krystal/html/js/jquery.plugin.js"></script>
 <script type="text/javascript" src="html/krystal/html/js/jquery.countdown.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.5.0/papaparse.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.js"></script>
 <script type="text/javascript" src="lod.js"></script>
 
     
@@ -419,9 +418,12 @@ $('.btn-search').click(function () {
     const urlParams = new URLSearchParams(window.location.search);
     const search = urlParams.get('search');
 
-    $('#addMore').click(function () {
-        addElements(csvData);
+    const rangeValue = 5;
 
+    $('#addMore').click(function () {
+        var count = +document.getElementById('addMore').getAttribute('data-count');
+        document.getElementById('addMore').setAttribute('data-count',count+1);
+        addFilteredElements(dataToShow.slice(count*rangeValue +1, count*rangeValue + rangeValue))
         $(".products-list .product-items").slice(0, 50).show();
        // e.preventDefault();
         $(".products-list .product-items:hidden").slice(0, 100).slideDown();
@@ -433,154 +435,43 @@ $('.btn-search').click(function () {
         }, 1500);
     })
 
-    $(document).ready(function() {
-        $.ajax({
-            type: "GET",
-            url: "csv/carss.csv",
-            dataType: "text",
-            success: function(data) {
-                csvData = data;
-                addElementsFirst(csvData);
-            }
-        });
-    });
+    d3.csv("csv/nn888.csv").then(function(data) {
+    var searchTerm = search;
+    var filteredData = [];
+    dataToShow = filteredData;
+    data.filter(function (d) {
+       if(d.title.toLowerCase().search(searchTerm.toLowerCase()) != -1){
+           filteredData.push(d);
+       }
+    })
+    addFilteredElements(dataToShow.slice(0,rangeValue));
+});
 
-
-    function processDataFirst(allText) {
-        var allTextLines = allText.split(/\r\n|\n/);
-        var headers = allTextLines[0].split(',');
-        var lines = [];
-        for (var i=0; i<allTextLines.length; i++) {
-            var data = allTextLines[i].split(',');
-            if (data.length == headers.length) {
-
-                var tarr = [];
-                for (var j=0; j<headers.length; j++) {
-                    tarr.push(data[j]);
-                }
-                lines.push(tarr);
-            }
-        }
-        console.log(lines.slice(0,50));
-
-        return lines.slice(0,50);
-    }
-
-    function addElementsFirst(data) {
-        let collection = processDataFirst(data);
-
-        /* var data;
-         var csvData;
-         Papa.parse('csv/carss.csv', {
-             header: true,
-             download: true,
-             dynamicTyping: true,
-             complete: function(results) {
-                 console.log(results);
-                 data = results.data;
-                 csvData = results.data;
-
-                 var result = findEmailByName('citroen vtr',csvData);
-             }
-         });*/
-
+    function addFilteredElements(data){
+        console.log(data);
         var c = document.createDocumentFragment();
-
-        for(let i=0; i<collection.length; i++){
-            if(collection[i][0].toLowerCase().search(search.toLowerCase()) != -1){
+        for(let i=0; i<data.length; i++){
                 let product_item = document.createElement('div');
                 product_item.className='product-items';
                 product_item.innerHTML = product;
-                product_item.querySelector('.product_image').src = collection[i][2];
-                product_item.querySelector('.product_title').textContent = collection[i][0];
-                product_item.querySelector('.product-infomation').textContent = collection[i][3];
+                product_item.querySelector('.product_image').src = data[i].link;
+                product_item.querySelector('.product_title').textContent = data[i].title;
+                //product_item.querySelector('.product-infomation').textContent = data[i][3];
 
                 /*$(product_item).find('.product_image')[0].src = collection[i][2];
                 $(product_item).find('.product_title').text(collection[i][0]);
                 $(product_item).find('.product-infomation').text(collection[i][3]);*/
-                for(let j=0; j<parseInt(collection[i][1]); j++){
+                for(let j=0; j<parseInt(data[i].rating); j++){
                     /**ratinn=$(this).text(collection[i][1]);
                      console.log(ratinn);**/
                     $(product_item).find('.star-rating').prepend('<i class="fa fa-star" aria-hidden="true"></i>');
                 }
-                $(product_item).find('.review').prepend('<span class="rate-num">'+collection[i][1]+'/5</span>');
+                $(product_item).find('.review').prepend('<span class="rate-num">'+data[i].rating+'/5</span>');
                 c.appendChild(product_item);
                 //$('.products-list').append(product_item);
-            }
         }
         $('.products-list').append(c);
     }
-
-    function addElements(data) {
-    let collection = processData(data);
-
-    /* var data;
-     var csvData;
-     Papa.parse('csv/carss.csv', {
-         header: true,
-         download: true,
-         dynamicTyping: true,
-         complete: function(results) {
-             console.log(results);
-             data = results.data;
-             csvData = results.data;
-
-             var result = findEmailByName('citroen vtr',csvData);
-         }
-     });*/
-
-    var c = document.createDocumentFragment();
-
-    for(let i=0; i<collection.length; i++){
-        if(collection[i][0].toLowerCase().search(search.toLowerCase()) != -1){
-            let product_item = document.createElement('div');
-            product_item.className='product-items';
-            product_item.innerHTML = product;
-            product_item.querySelector('.product_image').src = collection[i][2];
-            product_item.querySelector('.product_title').textContent = collection[i][0];
-            product_item.querySelector('.product-infomation').textContent = collection[i][3];
-
-            /*$(product_item).find('.product_image')[0].src = collection[i][2];
-            $(product_item).find('.product_title').text(collection[i][0]);
-            $(product_item).find('.product-infomation').text(collection[i][3]);*/
-            for(let j=0; j<parseInt(collection[i][1]); j++){
-                /**ratinn=$(this).text(collection[i][1]);
-                 console.log(ratinn);**/
-                $(product_item).find('.star-rating').prepend('<i class="fa fa-star" aria-hidden="true"></i>');
-            }
-            $(product_item).find('.review').prepend('<span class="rate-num">'+collection[i][1]+'/5</span>');
-            c.appendChild(product_item);
-            //$('.products-list').append(product_item);
-        }
-    }
-    $('.products-list').append(c);
-}
-
-    function processData(allText) {
-    var currChunkStart = +document.getElementById('addMore').getAttribute('data-start');
-    var currChunkEnd = +document.getElementById('addMore').getAttribute('data-end');
-    console.log(currChunkStart,currChunkEnd);
-    document.getElementById('addMore').setAttribute('data-start',currChunkEnd);
-    document.getElementById('addMore').setAttribute('data-end',currChunkEnd+50);
-
-    var allTextLines = allText.split(/\r\n|\n/);
-    var headers = allTextLines[0].split(',');
-    var lines = [];
-    for (var i=0; i<allTextLines.length; i++) {
-        var data = allTextLines[i].split(',');
-        if (data.length == headers.length) {
-
-            var tarr = [];
-            for (var j=0; j<headers.length; j++) {
-                tarr.push(data[j]);
-            }
-            lines.push(tarr);
-        }
-    }
-    console.log(lines.slice(currChunkStart,currChunkEnd));
-
-    return lines.slice(currChunkStart,currChunkEnd);
-}
     </script>
 </body>
 </html>
