@@ -2328,9 +2328,9 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
 }
 .star-rating {
     display: inline-block;
-    color: #f29f29;
+    color: #ffdc0f;
     margin-bottom: 11px;
-    font-size: 12px;
+    font-size: 14px;
 }
 .index-opt-1 .block-section-4 .star-rating {
   margin-bottom: -2px;
