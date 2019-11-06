@@ -34,6 +34,19 @@
             background-color: #fff;
             color: #33739E;
         }
+        #theImg{
+            margin-left: auto;
+            margin-right: auto;
+            /* width: 50%; */
+            display: block;
+        }
+        .externalLink{
+            display: block;
+            margin-top: 10px;
+        }
+        .popularLinks{
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body class="page-product list-view">
@@ -303,9 +316,22 @@
                         </div>
 <!--Load more-->
                         <a href="#" id="loadMore" style="display: none">Load More</a>
-                        <button id="addMore" data-start = "0" data-end= "50" data-count="1"->Load More</button>
-
+                        <div class="loadMore">
+                            <button id="addMore" data-start = "0" data-end= "50" data-count="1"->Load More</button>
+                        </div>
                         <!--Load more-->
+                        <div class="externalLink" style="display: none">
+                            <b>Popular Searches: </b>
+                            <a href="search_result.html?search=merce" class="popularLinks" >Lenovo 623WS,</a>
+                            <a href="search_result.html?search=merce" class="popularLinks" >Lenovo 623WS,</a>
+                            <a href="search_result.html?search=merce" class="popularLinks" >Lenovo 623WS,</a>
+                            <a href="search_result.html?search=merce" class="popularLinks" >Lenovo 623WS,</a>
+                            <a href="search_result.html?search=merce" class="popularLinks" >Lenovo 623WS,</a>
+                            <a href="search_result.html?search=merce" class="popularLinks" >Lenovo 623WS,</a>
+                            <a href="search_result.html?search=merce" class="popularLinks" >Lenovo 623WS,</a>
+                            <a href="search_result.html?search=merce" class="popularLinks" >Lenovo 623WS,</a>
+                            <a href="search_result.html?search=merce" class="popularLinks" >Lenovo 623WS,</a>
+                        </div>
 
                         <div class="pagination">
 <!--<ul class="nav-links">
@@ -445,7 +471,15 @@ $('.btn-search').click(function () {
            filteredData.push(d);
        }
     })
-    addFilteredElements(dataToShow.slice(0,rangeValue));
+        if(filteredData.length == 0){
+            $('#addMore').remove();
+            $('.products-list').prepend('<div class="row"> <div class="col-6 notFound"></div> </div>')
+            $('.notFound').prepend($('<img>',{id:'theImg',src:'img/notFound.JPG'}));
+            $('.externalLink').show();
+        }else{
+            addFilteredElements(dataToShow.slice(0,rangeValue));
+        }
+
 });
 
     function addFilteredElements(data){
