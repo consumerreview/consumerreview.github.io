@@ -1,0 +1,209 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+.m-box {
+    border: 1px solid #efefef;
+    padding: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+h2 {
+    color: #263238;
+    font-size: 26px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.custom-alart{
+	color: #666666;
+    border-left: 5px solid #d2d2d2;
+    background-color: #f9f9f9;
+    border-radius: 2px;
+}
+.custom-alart p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+.form-b {
+    border: 1px solid #efefef;
+    padding: 0px 14px;
+}
+.bdr-btm {
+    border-bottom: 1px solid #efefef;
+}
+.bdr-right {
+    border-right: 1px solid #efefef;
+    padding: 30px 40px;
+}
+.p-30{
+	padding: 30px 40px;
+}
+.section-title{
+	margin-top: 30px;
+}
+
+.mt-radio {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  margin-right: 50px;
+}
+.form-control{
+	font-size: 14px;
+}
+label{
+	font-size: 14px;
+}
+
+
+
+
+
+
+.mt-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.check-design {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #E6E6E6;
+    border-radius: 50%;
+}
+.mt-radio:hover input ~ .check-design {
+  background-color: #E6E6E6;
+}
+.mt-radio input:checked ~ .check-design {
+  background-color: #E6E6E6;
+}
+.check-design:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.mt-radio input:checked ~ .check-design:after {
+  display: block;
+}
+.mt-radio .check-design:after {
+ 	top: 8px;
+	left: 8px;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: #666;
+}
+.mt-image-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.check-d-image {
+    position: absolute;
+    top: 10px;
+    left: 115px;
+    height: 40px;
+    width: 40px;
+    background-color: #efefef;
+    border-radius: 50%;
+}
+/*.mt-image-radio:hover input ~ .check-d-image {
+  background-color: green;
+}*/
+.mt-image-radio input:checked ~ .check-d-image {
+  background-color: #37a000;
+}
+.check-d-image:after {
+  content: url(https://cdn.trustico.com/seal/widget/tick_wht.png);
+  position: absolute;
+}
+.mt-image-radio input:checked ~ .check-d-image:after {
+  display: block;
+}
+.mt-image-radio .check-d-image:after {
+    top: 11px;
+    left: 11px;
+}
+.mt-image-radio {
+    cursor: pointer;
+    border: 1px solid #efefef;
+    /*padding: 20px;*/
+    cursor: pointer;
+}
+
+
+
+
+
+.card {
+    border: 0px solid rgba(0,0,0,.125);
+}
+button.btn.btnCopy.red.btn-outline.pull-right.margin-bottom-10.margin-right-15 {
+    border: 1px solid #e7505a;
+    float: right;
+    margin-top: 15px;
+    border-radius: 0;
+    padding: 5px 30px;
+    color: #e7505a;
+}
+a.nav-link {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.copy-right.text-center p {
+    font-size: 14px;
+}
+.form-control:disabled, .form-control[readonly] {
+    background-color: #f9f9f9;
+    opacity: 1;
+    border-radius: 0px;
+    padding: 20px;
+    height: 300px;
+}
+
+
+@media (max-width: 1199.98px) {
+	
+}
+@media (max-width: 991.98px) {
+
+}
+@media (max-width: 767.98px) {
+
+}
+@media (max-width: 575.98px) {
+	label.mt-image-radio img {
+	    width: 100%;
+	}
+	.check-d-image {
+	    height: 30px;
+	    width: 30px;
+	}
+	.mt-image-radio .check-d-image:after {
+	    top: 7px;
+	    left: 7px;
+	}
+	.check-d-image:hover .bage-info {
+	    opacity: 1;
+	    width: 152px;
+	    left: -11px;
+	    top: 23px;
+	}
+}
+.st { display:none; }
+
+.cm-50{
+	margin-bottom: 50px;
+}
