@@ -1216,7 +1216,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
 }
 /********menu-mobile*******/
 .header-menu-nav .menu-on-mobile {
-    background: #31629f;
+    background: #eee;
     height: 51px;
     width: 160px;
     display: block;
