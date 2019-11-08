@@ -1056,7 +1056,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
   vertical-align: middle;
 }
 .header-menu-nav.menu-style-2{
-  background-color: #f9f9f9;
+  background-color: white;
   margin: 0px 0 0px 0;
 }
 .header-menu-nav.menu-style-2 .header-nav .menu-item-has-children{
@@ -1401,7 +1401,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
     font-size: 14px;
     color: black;
     text-transform: uppercase;
-    background-color: #eee;
+    background-color: #f9f9f9;
     padding: 16px 20px 16px 23px;
     font-weight: 400;
     margin-bottom: 0;
