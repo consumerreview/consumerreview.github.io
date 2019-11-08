@@ -2331,6 +2331,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
     color: #ffda00;
     margin-bottom: 11px;
     font-size: 19px;
+	padding-top: 14px;
 }
 .index-opt-1 .block-section-4 .star-rating {
   margin-bottom: -2px;
