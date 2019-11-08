@@ -972,6 +972,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
   border: 1px solid #e6e6e6;
   border-radius: 0;
   box-shadow: none;
+  visibility: hidden;
 }
 .chosen-container .chosen-results li.active-result:first-child,
 .chosen-container .chosen-results li.active-result.highlighted:first-child{
