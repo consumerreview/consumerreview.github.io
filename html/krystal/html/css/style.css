@@ -2330,7 +2330,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
     display: inline-block;
     color: #ffda00;
     margin-bottom: 11px;
-    font-size: 12px;
+    font-size: 19px;
 }
 .index-opt-1 .block-section-4 .star-rating {
   margin-bottom: -2px;
@@ -2339,7 +2339,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
   font-size: 14px;
 }
 .star-rating .review{
-  font-size: 12px;
+  font-size: 14px;
   color: #aaa;
 }
 .onsale,
