@@ -2285,7 +2285,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
 }
 .product-name a{
   font-size: 14px;
-  color: #31629f;
+  color: #333;
 }
 .product-name a:hover{
   color: #666;
