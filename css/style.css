@@ -215,7 +215,7 @@ ul#collapsibleNavbar {
     left: 0;
     right: 0;
     margin: auto;
-    background: #f9f9f9;
+    background: white;
     justify-content: initial !important;
     top: 40px;
     box-sizing: border-box;
