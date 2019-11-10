@@ -1403,7 +1403,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
     color: black;
     text-transform: uppercase;
     background-color: white;
-    padding: 16px 20px 16px 23px;
+    padding: 16px 20px 16px 0px;
     font-weight: 400;
     margin-bottom: 0;
     float: left;
