@@ -972,7 +972,6 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
   border: 1px solid #e6e6e6;
   border-radius: 0;
   box-shadow: none;
-  visibility: hidden;
 }
 .chosen-container .chosen-results li.active-result:first-child,
 .chosen-container .chosen-results li.active-result.highlighted:first-child{
@@ -1057,7 +1056,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
   vertical-align: middle;
 }
 .header-menu-nav.menu-style-2{
-  background-color: white;
+  background-color: #f6f6f6;
   margin: 0px 0 0px 0;
 }
 .header-menu-nav.menu-style-2 .header-nav .menu-item-has-children{
@@ -1093,7 +1092,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
 }
 .header-nav > li a,
 .header-nav .menu-item-has-children a{
-  font-weight: 400;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 13px;
 }
@@ -1217,13 +1216,13 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
 }
 /********menu-mobile*******/
 .header-menu-nav .menu-on-mobile {
-    background: #f9f9f9;
+    background: #31629f;
     height: 51px;
     width: 160px;
     display: block;
     float: left;
     line-height: 50px;
-    color: black;
+    color: #fff;
     text-transform: uppercase;
     text-align: center;
     font-weight: 600;
@@ -1400,11 +1399,11 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
 }
 .box-vertical-megamenus .title{
     font-size: 14px;
-    color: black;
+    color: #fff;
     text-transform: uppercase;
-    background-color: white;
-    padding: 16px 20px 16px 0px;
-    font-weight: 400;
+    background-color: #31629f;
+    padding: 16px 20px 16px 23px;
+    font-weight: 600;
     margin-bottom: 0;
     float: left;
     height: 51px;
@@ -1420,7 +1419,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
     display: block;
     width: 100%;
     margin-bottom: 3px;
-    background-color: black;
+    background-color: #ffffff;
     height: 2px;
 }
 .menu-on-mobile.hidden-md.style2{
@@ -2286,7 +2285,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
 }
 .product-name a{
   font-size: 14px;
-  color: #333;
+  color: #31629f;
 }
 .product-name a:hover{
   color: #666;
@@ -2327,13 +2326,12 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
   font-size: 13px;
   text-decoration: line-through;
 }
-.star-rating {
+/*.star-rating {
     display: inline-block;
-    color: #ffda00;
+    color: #f29f29;
     margin-bottom: 11px;
-    font-size: 19px;
-	padding-top: 14px;
-}
+    font-size: 12px;
+}*/
 .index-opt-1 .block-section-4 .star-rating {
   margin-bottom: -2px;
 }
@@ -2341,7 +2339,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
   font-size: 14px;
 }
 .star-rating .review{
-  font-size: 14px;
+  font-size: 12px;
   color: #aaa;
 }
 .onsale,
@@ -5301,7 +5299,7 @@ label.inline{
   margin-top: 0;
 }
 .toolbar-option{
-  background-color: white;
+  background-color: #eee;
 }
 .toolbar-sort,
 .toolbar-per{
@@ -5380,7 +5378,7 @@ label.inline{
 	display: none;
 }
 .products-list .product-items:hover{
-  box-shadow: none;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
   -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -5390,7 +5388,6 @@ label.inline{
   display: inline-block;
   vertical-align: top;
   position: relative;
-  padding: 30px;
 }
 .products-list .product-info{
   width: 52%;
