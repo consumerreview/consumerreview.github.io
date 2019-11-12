@@ -1216,13 +1216,13 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
 }
 /********menu-mobile*******/
 .header-menu-nav .menu-on-mobile {
-    background: #31629f;
+    background: white;
     height: 51px;
     width: 160px;
     display: block;
     float: left;
     line-height: 50px;
-    color: #fff;
+    color: #333;
     text-transform: uppercase;
     text-align: center;
     font-weight: 600;
