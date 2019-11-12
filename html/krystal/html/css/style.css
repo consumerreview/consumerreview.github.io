@@ -5388,6 +5388,7 @@ label.inline{
   display: inline-block;
   vertical-align: top;
   position: relative;
+  padding: 20px;
 }
 .products-list .product-info{
   width: 52%;
