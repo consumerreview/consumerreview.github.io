@@ -1056,7 +1056,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
   vertical-align: middle;
 }
 .header-menu-nav.menu-style-2{
-  background-color: #f6f6f6;
+  background-color: white;
   margin: 0px 0 0px 0;
 }
 .header-menu-nav.menu-style-2 .header-nav .menu-item-has-children{
@@ -1399,9 +1399,9 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
 }
 .box-vertical-megamenus .title{
     font-size: 14px;
-    color: #fff;
+    color: black;
     text-transform: uppercase;
-    background-color: #31629f;
+    background-color: white;
     padding: 16px 20px 16px 23px;
     font-weight: 600;
     margin-bottom: 0;
@@ -1419,7 +1419,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
     display: block;
     width: 100%;
     margin-bottom: 3px;
-    background-color: #ffffff;
+    background-color: black;
     height: 2px;
 }
 .menu-on-mobile.hidden-md.style2{
