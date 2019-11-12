@@ -5332,7 +5332,7 @@ label.inline{
 }
 .modes .active.modes-mode i,
 .modes .modes-mode:hover i{
-  color: #31629f;
+  color: #333;
 }
 /*
 .toolbar-option .toolbar-sort,
