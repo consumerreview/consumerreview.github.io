@@ -528,6 +528,22 @@ $('#submitBtn').click(function () {
        window.location.href = "search_result.html?search="+search;
    }
 });
+
+function checkKey(e){
+
+    switch (e.keyCode) {
+
+        case 13:
+            e.preventDefault();
+            let search = $('#search_text').val();
+            if(search != '') {
+                window.location.href = "search_result.html?search="+search;
+            }
+            break;
+    }
+}
+
+$(document).keydown (checkKey);
 /*    $( window ).on( "load", function() {
     $(".products-list .product-items").slice(0, 10).show();
     $("#loadMore").on('click', function (e) {
