@@ -1398,12 +1398,12 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
   cursor: pointer;
 }
 .box-vertical-megamenus .title{
-    font-size: 14px;
+    font-size: 13px;
     color: black;
     text-transform: uppercase;
     background-color: white;
     padding: 16px 20px 16px 0px;
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: 0;
     float: left;
     height: 51px;
