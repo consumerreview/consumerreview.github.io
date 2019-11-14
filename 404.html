@@ -37,25 +37,32 @@
 						<ul  class="navbar-nav collapse navbar-collapse justify-content-end" id="collapsibleNavbar" style="">
 							
 							<li class="nav-item" >
-								<a class="nav-link" href="#" title="">DE</a>
+								<a class="nav-link" href="index.html" title="">DE</a>
 							</li>
 							<li class="nav-item" >
-								<a class="nav-link" href="#" title="">US</a>
+								<a class="nav-link" href="index.html" title="">US</a>
 							</li>
 							<li class="nav-item" >
-								<a class="nav-link" href="#" title="">UK</a>
+								<a class="nav-link" href="index.html" title="">UK</a>
 							</li>
 							<li class="nav-item" >
-								<a class="nav-link" href="#" title="">AE</a>
+								<a class="nav-link" href="index.html" title="">AE</a>
 							</li>
 							<li class="nav-item" >
-								<a class="nav-link" href="#" title="">CH</a>
+								<a class="nav-link" href="index.html" title="">CH</a>
 							</li>
 							<li class="nav-item" >
-								<a class="nav-link" href="#" title="">BE</a>
+								<a class="nav-link" href="index.html" title="">BE</a>
 							</li>
 							<li class="nav-item" >
-								<a class="nav-link" href="#" title="">ABOUT</a>
+								<a class="nav-link" href="index.html" title="">FR</a>
+							</li>
+							<li class="nav-item" >
+								<a class="nav-link" href="global/index.html" title="">GLOBAL</a>
+							</li>
+							
+							<li class="nav-item" >
+								<a class="nav-link" href="login/index.html" title="">LOGIN</a>
 							</li>
 						</ul>
 						
@@ -67,7 +74,7 @@
 					<img src="img/logo.png">
 
 					<div class="input-group">
-							<input type="text" class="" id="textInput" placeholder="Search top products or services">
+							<input type="text" class="" id="textInput" placeholder="Trusted Reviews for products, services">
 							<div class="input-group-append" style="">
 								<button type="button" id="submitBtn" class="btn btn-primary">
 									<span class="fa fa-search"></span>
@@ -76,7 +83,7 @@
 					</div>
 					<div class="externalLink">
 						<b style="font-size: small">Popular Searches: </b>
-						<a href="search_result.html?search=Sony%20PlayStation%204" class="popularLinks" >Sony PlayStation 4,</a>
+						<a href="search_result.html?search=epson" class="popularLinks" >Epson Printer Scanner,</a>
 						<a href="search_result.html?search=samsung" class="popularLinks" >Samsung T5 Portable SSD,</a>
 						<a href="search_result.html?search=lenovo" class="popularLinks" >Lenovo Laptop,</a>
 						<a href="search_result.html?search=crucial" class="popularLinks" >Crucial MX 500,</a>
@@ -93,8 +100,9 @@
 				
 			</div>
 			<div class="end">
-				<h5>Copyright © 2019. All Rights Reserved.</h5>
+				<h5>Copyright © 2019. All Rights Reserved.</h5> 
 				</div>
+				
 		<!--	<div class="last_row">
 				<h6>Made in Swizterland-Search Project all right reserved sample text</h6>
 			</div>-->
@@ -140,14 +148,27 @@
 
     
     var h = window.innerHeight;
-    $(".container").css({"height":h});
+                $(".container").css({"height":h});
 
-    $('#submitBtn').click(function () {
-       let search = $('#textInput').val();
-       if(search != '') {
-           window.location.href = "search_result.html?search="+search;
-       }
-    });
+                $('#submitBtn').click(function () {
+                    let search = $('#textInput').val();
+                    if(search != '') {
+                        window.location.href = "search_result.html?search="+search;
+                    }
+                });
+
+                function checkKey(e){
+                    switch (e.keyCode) {
+                        case 13:
+                            let search = $('#textInput').val();
+                            if(search != '') {
+                                window.location.href = "search_result.html?search="+search;
+                            }
+                            break;
+                    }
+                }
+
+				$(document).keydown (checkKey);
 
 </script>
 			
