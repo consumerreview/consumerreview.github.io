@@ -1419,8 +1419,8 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
     display: block;
     width: 100%;
     margin-bottom: 3px;
-    background-color: black;
-    height: 2px;
+    background-color: #888;
+    height: 1px;
 }
 .menu-on-mobile.hidden-md.style2{
   float: right;
