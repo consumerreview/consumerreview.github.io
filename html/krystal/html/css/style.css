@@ -1225,7 +1225,7 @@ ul#collapsibleNavbar.navbar-nav li.nav-item:last-child {
     color: #333;
     text-transform: uppercase;
     text-align: center;
-    font-weight: 600;
+    font-weight: 300;
 }
 .header-menu-nav.menu-style-2 .menu-on-mobile{
   float: right;
