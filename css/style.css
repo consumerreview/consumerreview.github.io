@@ -78,16 +78,16 @@ input{
 }
 .btn-primary{
 	min-width: 55px;
-	background-color: #ffdc0f;
+	background-color: #ffc40f;
 	outline: none;
 	border:none;
 }
 .btn-primary:hover{
-	background:#ffc40f;
+	background:#ffdc0f;
 	outline: none;
 }
 .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-	background:  #ffc40f;
+	background:  #ffdc0f;
 	outline: none;
 	border:none;
 }
