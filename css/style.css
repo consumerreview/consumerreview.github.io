@@ -83,11 +83,11 @@ input{
 	border:none;
 }
 .btn-primary:hover{
-	background:#ffdc0f;
+	background:#ffb70f;
 	outline: none;
 }
 .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-	background:  #ffdc0f;
+	background:  #ffb70f;
 	outline: none;
 	border:none;
 }
