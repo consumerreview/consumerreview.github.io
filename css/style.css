@@ -59,6 +59,7 @@ a:hover {
 img{
 	width:100%;
 	margin-bottom: 30px;
+    margin-top: -20px;
 }
 .card{
 	border:none;
