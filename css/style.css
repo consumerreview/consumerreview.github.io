@@ -79,16 +79,16 @@ input{
 }
 .btn-primary{
 	min-width: 55px;
-	background-color: #ffb70f;
+	background-color: #ef6a23;
 	outline: none;
 	border:none;
 }
 .btn-primary:hover{
-	background:#ffb70f;
+	background:#ef6a23;
 	outline: none;
 }
 .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-	background:  #ffb70f;
+	background:  #ef6a23;
 	outline: none;
 	border:none;
 }
@@ -231,4 +231,4 @@ ul#collapsibleNavbar li.nav-item:last-child {
 }
 }
 
-.fa-search{color:#484848;}
+.fa-search{color:white;}
