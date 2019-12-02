@@ -232,3 +232,17 @@ ul#collapsibleNavbar li.nav-item:last-child {
 }
 
 .fa-search{color:white;}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    background: url(../img/background6.png) no-repeat center;
+}
+
+.card {
+background: none ; !important
+
+}
