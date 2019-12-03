@@ -240,7 +240,7 @@ ul#collapsibleNavbar li.nav-item:last-child {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    background: url(../img/background6.png) no-repeat center WHITE;
+    background: url() no-repeat center WHITE;
 }
 
 .card {
