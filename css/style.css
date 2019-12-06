@@ -127,14 +127,6 @@ ul li a{
 	z-index: 1;
 }
 
-@media (max-width: 1920px){
-	.card{
-		width:90%;
-	}
-}
-
-
-
 @media (max-width: 1200px){
 	.card{
 		width:80%;
