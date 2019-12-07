@@ -113,6 +113,14 @@ ul li a{
 .mytoprow{
 	margin-bottom: -50px;
 }
+@media (min-width: 2000px){
+	.container{
+		max-width: 1540px; !important
+
+	}}
+
+
+
 @media (min-width: 768px){
 	.mytoprow{
 		padding:0px 100px;
