@@ -197,8 +197,13 @@
   content: "\f004";
 }
 .fa-star:before {
-  content: "\f005";
-  color: #ef6a23 ;
+    content: "\f005";
+    color: white;
+    background: #ff720e;
+    border-radius: 8px;
+    font-size: 11px;
+    padding: 3px;
+    margin-left: 1px;
 }
 .fa-star-o:before {
   content: "\f006";
