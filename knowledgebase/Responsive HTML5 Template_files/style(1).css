@@ -2815,7 +2815,7 @@ select {
 }
 @media only screen and (min-width: 1040px) {
   .header__search form input {
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 @media only screen and (max-width: 1039px) {
