@@ -31,16 +31,18 @@
 	</head>
 	<body>
 		<div class="container-fluid" >
-			<div class="row mytoprow" >
+			<div class="row mytoprow" > 
 				<div class="col-sm-12">
 					<nav class="navbar navbar-expand-sm bg-white
-						justify-content-end">
-						
+						justify-content-end">						
 						<button class="navbar-toggler this" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 						<span class="fa fa-bars"></span>
 						</button>
+						
 						<ul  class="navbar-nav collapse navbar-collapse justify-content-end" id="collapsibleNavbar" style="">
-							
+						    <li class="nav-item" >
+								<a class="nav-link" href="knowledgebase/index.html" title="">KNOWLEDGEBASE</a>
+							</li>
 							<li class="nav-item" >
 								<a class="nav-link" href="index.html" title="">US</a>
 							</li>
@@ -84,7 +86,7 @@
 					<img src="img/logo.png">
 
 					<div class="input-group">
-							<input type="text" class="" id="textInput" placeholder="World's No1 source for Trusted Reviews">
+							<input type="text" class="" id="textInput" placeholder="More than 2.000.000 Trusted Reviews">
 							<div class="input-group-append" style="">
 								<button type="button" id="submitBtn" class="btn btn-primary">
 									<span class="fa fa-search"></span>
@@ -110,48 +112,14 @@
 				
 			</div>
 			<div class="end">
-				<h5>Copyright © 2019. All Rights Reserved.</h5> 
+				<h5>Copyright © 2019. All Rights Reserved.</h5>
 				</div>
 				
 		<!--	<div class="last_row">
 				<h6>Made in Swizterland-Search Project all right reserved sample text</h6>
 			</div>-->
-
 			
 			
-			<script type="text/javascript">
-			
-			// Get input element
-			const textInput = document.getElementById('textInput');
-			// Array containing values form which we want to search
-			// insert lowecase letters here in this array
-			// YOu can edit your list here.
-			const arr = [
-			'hbrehman',
-			'adnan',
-			'walid',
-			'wosno.com'
-			];
-			// get Btn
-			const btn = document.getElementById('submitBtn');
-			// Event listener...
-			btn.addEventListener('click', () => {
-			const textValue = textInput.value.toLowerCase();
-			var indicator = false;
-			for (let c of arr) {
-			if (c == textValue) {
-			//alert('Domain is valid');
-			
-			indicator = true;
-			window.location.assign("#");
-			break;
-			}
-			}
-			if (!indicator)
-			//alert('Not exists');
-			window.location.assign("#");
-			});
-			</script>
 
 
 			<script>
