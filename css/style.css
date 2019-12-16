@@ -250,7 +250,7 @@ ul#collapsibleNavbar li.nav-item:last-child {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-	background: none;
+	background: url(https://cdn.dribbble.com/users/377140/screenshots/6469284/walking_man.gif) no-repeat center WHITE;
 	-webkit-background-size: contain;
   -moz-background-size: contain;
   -o-background-size: contain;
@@ -261,17 +261,3 @@ ul#collapsibleNavbar li.nav-item:last-child {
 background: none ; !important
 
 }
-
-
-#myVideo {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  max-width: 50%;
-  min-height: 100%;
-  z-index: -1;
-  background: #ffc3c3;
-}
-body {
-	background: #ffc3c3; !important
-	}
