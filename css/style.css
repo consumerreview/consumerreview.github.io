@@ -250,11 +250,11 @@ ul#collapsibleNavbar li.nav-item:last-child {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    background: url(../img/ccc.jpg) no-repeat center WHITE;
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	background: url(https://62d1d7e0-a-62cb3a1a-s-sites.googlegroups.com/site/yuiwqeq/home/curiosity_for_dribbble_01gif.gif?attachauth=ANoY7crPW-Tcbp2GIcP4IdKIq2sGdKxgwtEIKu0Dpk2tVtepdf8la0F_l3u_YgaCxBdJ8DYjmIwzhpn1H2kBRD6WUe6oJxvFpS9fvPxHoKzRr7mrYLp-MqkMPwJkhIrip7HVLUmMnjQWqx-QMcYK5YXrqJ7DknbRn7vzJPej2_0UCrbL13cUTdDxzWSr-eCrInON4cLahe2MX005d5bQb8X2OZYMnkGg058EMAu6JGL2qB0fqW6j5Ps%3D&attredirects=0) no-repeat center #FFCCCD;
+	-webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
 }
 
 .card {
