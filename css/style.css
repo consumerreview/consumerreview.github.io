@@ -262,6 +262,12 @@ background: none ; !important
 
 }
 
+.input-group {
+ 
+    margin-left: 3%; !important
+}
+
+
 #myVideo {
   position: absolute;
   left: 0;
@@ -274,3 +280,5 @@ background: none ; !important
 body {
 	background: #f0f4f8; !important
 	}
+	
+	
