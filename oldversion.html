@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name = "yandex-verification" content = "32de5565a1e794b7" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<style type="text/css">
+			.externalLink{
+				display: block;
+				margin-top: 20px;
+				padding-left: 3%;
+			}
+			.popularLinks{
+				display: inline;
+				text-decoration: underline;
+				color:black !important;
+				font-size: small !important;
+			}
+		</style>
+<style type="text/css">
+
+.bg-white {
+    background: none !important;
+}
+</style>
+
+	</head>
+	<body>
+		<div class="container-fluid" >
+			<div class="row mytoprow" > 
+				<div class="col-sm-12">
+					<nav class="navbar navbar-expand-sm bg-white
+						justify-content-end">						
+						<button class="navbar-toggler this" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+						<span class="fa fa-bars"></span>
+						</button>
+						
+						<ul  class="navbar-nav collapse navbar-collapse justify-content-end" id="collapsibleNavbar" style="">
+						    <li class="nav-item" >
+								<a class="nav-link" href="knowledgebase/index.html" title="">KNOWLEDGEBASE</a>
+							</li>
+							<li class="nav-item" >
+								<a class="nav-link" href="index.html" title="">US</a>
+							</li>
+							<li class="nav-item" >
+								<a class="nav-link" href="ch.html" title="">CH</a>
+							</li>
+							<li class="nav-item" >
+								<a class="nav-link" href="ru.html" title="">RU</a>
+							</li>
+							<li class="nav-item" >
+								<a class="nav-link" href="de.html" title="">DE</a>
+							</li>
+							<li class="nav-item" >
+								<a class="nav-link" href="france.html" title="">FR</a>
+							</li>
+							<li class="nav-item" >
+								<a class="nav-link" href="se.html" title="">SE</a>
+							</li>
+							<li class="nav-item" >
+								<a class="nav-link" href="it.html" title="">IT</a>
+							</li>
+							<li class="nav-item" >
+								<a class="nav-link" href="global/index.html" title="">GLOBAL</a>
+							</li>
+							<li class="nav-item" >
+								<a class="nav-link" href="badge/index.html" title="">TRUST SEAL</a>
+							</li>
+							<li class="nav-item" >
+								<a class="nav-link" href="login/index.html" title="">LOGIN</a>
+							</li>
+							<li class="nav-item" >
+								<a class="nav-link" href="terms/index.html" target="_blank" title="">TERMS</a>
+							</li>
+						</ul>
+						
+					</nav>
+				</div>
+			</div>
+			<div class="container">
+				<div class="card">
+					<img src="img/logo.png">
+
+					<div class="input-group">
+							<input type="text" class="" id="textInput" placeholder="Find the Best Products or Services">
+							<div class="input-group-append" style="">
+								<button type="button" id="submitBtn" class="btn btn-primary">
+									<span class="fa fa-search"></span>
+								</button>
+							</div>
+					</div>
+					<div class="externalLink">
+						<b style="font-size: small">Popular Searches: </b>
+						<a href="search_result.html?search=epson" class="popularLinks" >Epson Printer Scanner,</a>
+						<a href="search_result.html?search=L%27Oreal" class="popularLinks" >L'Oreal Paris Products,</a>
+						<a href="search_result.html?search=lenovo" class="popularLinks" >Lenovo Laptop,</a>
+						<a href="search_result.html?search=crucial" class="popularLinks" >Crucial MX 500,</a>
+						<a href="search_result.html?search=nintendo" class="popularLinks" >Nintendo,</a>
+						<a href="search_result.html?search=USB%20Wifi%20Adapter" class="popularLinks" >USB Wifi Adapter,</a>
+						<a href="search_result.html?search=philips" class="popularLinks" >Philips,</a>
+						<a href="search_result.html?search=tablet" class="popularLinks" >Tablet Accessories,</a>
+						<a href="search_result.html?search=Apple%20iPad" class="popularLinks" >Apple iPad,</a>
+						<a href="search_result.html?search=Linksys" class="popularLinks" >Linksys E2500 Adv</a>
+					</div>
+				</div>
+
+
+				
+			</div>
+			<div class="end">
+				<h5>Copyright © 2019. All Rights Reserved.</h5>
+				</div>
+				
+		<!--	<div class="last_row">
+				<h6>Made in Swizterland-Search Project all right reserved sample text</h6>
+			</div>-->
+			<!-- The video -->
+			
+			<video autoplay muted loop id="myVideo">
+  <source 
+
+src="#https://video.twimg.com/tweet_video/EL7sNngXsAUYdn8.mp4" type="video/mp4">
+</video>
+
+			<script>
+
+    
+    var h = window.innerHeight;
+                $(".container").css({"height":h});
+
+                $('#submitBtn').click(function () {
+                    let search = $('#textInput').val();
+                    if(search != '') {
+                        window.location.href = "search_result.html?search="+search;
+                    }
+                });
+
+                function checkKey(e){
+                    switch (e.keyCode) {
+                        case 13:
+                            let search = $('#textInput').val();
+                            if(search != '') {
+                                window.location.href = "search_result.html?search="+search;
+                            }
+                            break;
+                    }
+                }
+
+				$(document).keydown (checkKey);
+
+</script>
+
+
+			
+		</div>
+	</body>
+</html>
